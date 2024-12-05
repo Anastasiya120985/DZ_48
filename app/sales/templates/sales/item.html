@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+    {% if form %}
+    <form method="POST">
+        {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Добавить товар" >
+    {% endif%}
+     {% if name %}
+        <h2>Товар {{name}} добавлен</h2>
+        {% endif %}
+{% endblock %}
